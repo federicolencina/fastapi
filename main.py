@@ -24,7 +24,7 @@ def give_back_song(id: int):
     return {"Perro Amor Explota": id}
 
 
-@app.post("/books")
+@app.post("/song")
 def put_song(song: Song):
     return {"msg": f"Song: {song.title} has been entered"}
 
