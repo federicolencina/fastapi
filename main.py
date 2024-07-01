@@ -8,8 +8,9 @@ app = FastAPI()
 class Song(BaseModel):
     title: str
     author: str
-    disk: str
+    album: str
     publisher: Optional[str]
+    release_dare: Optional[str]
 
 
 @app.get("/")
@@ -21,7 +22,7 @@ def index():
 
 @app.get("/song/{id}")
 def give_back_song(id: int):
-    return {"Perro Amor Explota": id}
+    return {"Trátame suavemente": id}
 
 
 @app.post("/song")
@@ -31,4 +32,4 @@ def put_song(song: Song):
 
 @app.get("/songs")
 def get_song(song: Song):
-    return {f"{song.title}": f"{song.author}, {song.disk}, {song.publisher}"}
+    return {f"{song.title}": f"{song.author}, {song.album}, {song.publisher}, {song.release_date}"}
